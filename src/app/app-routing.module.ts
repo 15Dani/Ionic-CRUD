@@ -8,8 +8,21 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'contacts',
     pathMatch: 'full'
+  },
+
+  {
+    path: 'contacts/edit/:id',
+    loadChildren: () => import('./contacts/contact-form/contact-form.module').then( m => m.ContactFormPageModule)
+  },
+  {
+    path: 'contact-form',
+    loadChildren: () => import('./contacts/contact-form/contact-form.module').then( m => m.ContactFormPageModule)
+  },
+  {
+    path: 'contact-list',
+    loadChildren: () => import('./contacts/contact-list/contact-list.module').then( m => m.ContactListPageModule)
   },
 ];
 
